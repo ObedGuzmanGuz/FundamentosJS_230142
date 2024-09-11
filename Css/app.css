@@ -1,0 +1,87 @@
+html{
+box-sizing: border-box;
+font-size: 62.5%;
+
+}
+
+
+
+
+body{
+font-size: 1.6rem;
+font-family: 'Lato', sans-serif;
+background-color: rgb(172, 56, 56);
+
+
+}
+
+
+*,*:before, *:after{
+
+box-sizing: inherit;
+
+}
+
+header{
+
+padding: 3rem 0;
+
+}
+
+
+header h1{
+text-align: center;
+color: white;
+font-size: 6rem;
+
+}
+
+header p{
+
+color: antiquewhite;
+text-align: center;
+font-size: 3.2rem;
+}
+
+
+header p a{
+text-decoration: none;
+color: #4cabea;
+
+}
+
+.DOM {
+max-width: 120rem;
+margin: 0 auto;
+
+}
+
+.DOM h2{
+color: #fff;
+text-align: center;
+}
+.DOM nav a {
+color: #fff;
+font-size: 20px;
+text-decoration: none;
+margin-right: 10px;
+}
+
+.DOM p {
+color: #2563EB;
+font-size: 20px;
+
+}
+.DOM #formulario input{
+
+
+display: block;
+
+}
+
+
+
+
+
+
+
