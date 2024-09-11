@@ -7,6 +7,17 @@ Proyecto de clase para la Unidad 1 de la asignatura de Aplicaciones Web Orientad
 Previo a iniciar el desarrollo de software para web usando el framework de NodeJS, realizaremos un par de prácticas de repaso en JavaScript puro, con el objetivo de confirmar los conocimientos basicos de logica de programación.
 
 
+## Descripcion
+
+
+|No.|Descripcion|Estatus|
+|---|-----|----|
+|1.|Metodologia de la Evaluacion| Activa|
+|2.|Inicializacion del Proyecto de Fundamentos de JS| Activa|
+
+
+
+
 ### Autor 
 
 Obed Guzman Flores
