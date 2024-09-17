@@ -70,6 +70,77 @@ console.log(`Tu abono de : ${monto_transaccion} ha sido reciido, tu nuevo saldo 
 
 
 
+// String o cadenas de texto
+
+
+const alumno= "obed";
+let producto ;
+console.warn("--- Tipo de Dato - String (cadena de caracteres)");
+console.log(`El nombre del alumno es: ${alumno}, que es un tipo de dato ${typeof(alumno)}`);
+producto=  'monitor 20 pulgadas'
+console.log(`El nombre del producto es: ${producto}, que es un tipo de dato ${typeof(producto)}`);
+//Manipulando los Strings
+
+console.log(`Más adelante podremos transformar el contenido de los Strings usando funcions especificas como convertir a mayusculas: ${alumno} =>${alumno.toUpperCase()}`);
+console.log(`o en su dfecto a minisculas: ${producto} => ${producto.toLowerCase()}`);
+
+
+
+// const numero = "30"
+// const numero2= 30
+
+// console.log(typeof numero)
+// console.log(typeof numero2)
+
+// BigInt (Enteros de Dimesnsiones amplias)- Generalmente en sistemas matematicos, fisicos o espaciales dpnde se requiere de una excelente precision numerica
+// const numerogrande=  BigInt(918298193281887139831091038173813)
+// console.log(typeof numerogrande)
+console.warn("-----Tipo de Dato -BIGINT(numero amplio)");
+const numerog= 123456789
+const numerog2= 12345678901234567890
+const numerog3= 123456789012345678901234567890
+const numerog4= 1234567890123456789012345678901234567890
+
+console.log(`El primer experimento de un numero grande es: ${numerog}, que si es soportado por Number, y su tipo de datoa es: ${typeof(numerog)}`)
+
+
+console.log(`El primer experimento de un numero grande es: ${numerog2}, que si es soportado por Number, y su tipo de datoa es: ${typeof(numerog2)}`)
+console.log(`El primer experimento de un numero grande es: ${numerog3}, que si es soportado por Number, y su tipo de datoa es: ${typeof(numerog3)}`)
+console.log(`El primer experimento de un numero grande es: ${numerog4}, que si es soportado por Number, y su tipo de datoa es: ${typeof(numerog4)}`)
+
+
+
+
+// const numero= 10
+// const numero2 =20
+
+// console.log(numero + Number(numerogrande))
+
+
+
+// const numero= "3030"
+// const numero2= 30
+// console.log(typeof String(numero2))
+// console.log(typeof Number(numero))
+
+
+// Symbol 
+// const primerSymbol = Symbol(30)
+// const segundoSymbol = Symbol(30)
+
+// console.log(primerSymbol === segundoSymbol)
+
+// console.log(primerSymbol.valueOf())
+// console.log(segundoSymbol.valueOf())
+
+//Null 
+
+// const descuento = null
+// console.log(typeof descuento)
+
+
+
+
 
 
 
