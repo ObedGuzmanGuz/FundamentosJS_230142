@@ -18,6 +18,7 @@ console.log(`El tipo de dato de la variable cliente es: ${typeof(cliente)}`);
 
 // Undefined es el tipo de dato que por defecto se asigna a variables no inicializadas o no declarados
 
+
 // 2. BOOLEAN
 
 console.warn("------ Tipo de Dato Boleano - TRUE/FALSE");
