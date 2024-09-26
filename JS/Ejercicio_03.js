@@ -43,17 +43,19 @@ console.log(typeof(Producto_SKU));
 // Ahora lo declaramos como un objeto
 console.log("%c2.-Objeto", style_console);
 
-let Producto={
-Barcode:null,
-Categoria:["Electronica"],
+let Producto = {
+ID:100,
 Nombre: "Tornamesa",
 Marca:"Piooner",
 Modelo:"Ddj-rev1 Golden",
 Nombre:"Mezcladora",
 Precio: 6600.50,
+Disponibilidad:false,
 SKU: "DZ20210505",
-Stock: 8,
-Disponibilidad:false
+Stock: 0,
+Barcode:null,
+Categoria:["Electronica"]
+
 }
 console.table(Producto);
 
@@ -88,7 +90,7 @@ Categoria:["Electronica", "Ciencia"],
 
 let Comprador ={
 
-Clave: 3216,
+ID: 3216,
 Nombre: "Obed",
 Apellidos: "Guzman Flores",
 Tipo: "Frecuente",
@@ -97,6 +99,7 @@ PaisdeOrigen:"Mexico",
 SaldoActual: 20000
 }
 let Pedido = {
+ID:5816,
 Producto_Clave:345,
 Comprador_Clave:2005,
 Cantidad:5,
@@ -132,7 +135,7 @@ console.log(`El nuevo de dato de la disponibilidad es:${nuevoTipoDisponibilidad}
 
 //Convierte el Objeto a una cadena para evitar problemas con la referencia
 console.log('Por cuestiones de inflacion el costo del producto ha cambiado y debe ser actualizado')
-Producto=19000.00
+Producto.Precio=19000.00
 console.log(`Los nuevos valores del producto son: `)
 console.log(Producto2);
 
@@ -203,32 +206,32 @@ console.table(Pedido)
 //Desustructuracion de 2 o mas objetos 
 console.log("%c9. - Desestructuracion de 2 o mas objetos", style_console);
 
-const {Precio:productoPrecio,SKU: ProductoSKU, Marca: ProductoMarca}=Producto;
-const {Correo:clientecorreo,PaisdeOrigen: clientePais, SaldoActual:clientesaldo, Tipo: clienteTipo}=Comprador;
+let {Precio:productoPrecio,SKU: ProductoSKU, Marca: ProductoMarca}=Producto;
+let {Correo:clientecorreo,PaisdeOrigen: clientePais, SaldoActual:clientesaldo, Tipo: clienteTipo}=Comprador;
 
 //Transformar valores cuantitativos en cualitativos
 if(productoPrecio>2000)
-    productoPrecio="Esta carisimo"
+    productoPrecio="Caro";
 else
-productoPrecio="Baratisimo"
+productoPrecio="Barato";
 
 
 if(clientesaldo>0)
-    clientesaldo="A favor"
+    clientesaldo="A favor";
 else if(clientesaldo<0)
-clientesaldo="En contra"
+clientesaldo="En contra";
 else
-clientesaldo="Sin deuda"
+clientesaldo="Sin deuda";
 
 // Transformar valores cualitativos en cuantitativos
 let clienteNivel;
 
-if(cliente=="Premium")
+if(clienteTipo=="Premium")
     clienteNivel=1
-if(cliente=="Freemium")
+if(clienteTipo=="Freemium")
     clienteNivel=2
 
-if(cliente=="No identificado")
+if(clienteTipo=="No identificado")
     clienteNivel=3
 
 
@@ -245,7 +248,7 @@ clientePais="Extranjero"
 
 
 
-let datosClientePromociones ={clientecorreo, clientePais, clienteNivel, clientesaldo,ProductoMarca,ProductoPrecio
+let datosClientePromociones ={clientecorreo, clientePais, clienteNivel, clientesaldo,ProductoMarca,productoPrecio
 }
 
 
@@ -257,7 +260,102 @@ console.table(datosClientePromociones)
 
 
 
+//operaciones sobre objetos
+// Union de objetos
 
+console.log("%c10.- Union de objetos usando el metodo de asignacion (ASSING)",
+style_console);
+
+
+console.log("Imprimimos la estructura y valores del Objeto Producto")
+console.table(Producto);
+
+console.log("Imprimimos la estructura y valores del Objeto PEDIDO")
+console.table(Pedido);
+
+
+//Suponiendo que el usuario ya realiazo el pago el pedido se convertira en una VENTA que requiere informacion de ambos objetos
+
+
+//PREGUNTA DE EXAMEN------------------------------------------------------------------------------------------------------------------------------
+//Importante: ASSING, no solo permite la fusion de 2 o mas objetos, tambien muta los objetos originales, perdiendo el valor original del ID en este caso
+let Producto3 = {...Producto}
+const   Venta = Object.assign(Producto3,Pedido);
+console.log("Consultamos este nuevo objeto Venta")
+console.table(Venta);
+
+
+//Union de objetos usando SPREA OPERATIR para evitar la perdida de informacion con objetos que comparten el mismo nombre en sus propiedades
+console.log("%c10. -Union de Objetos usando el SPREAD OPERATOR (....)",style_console);
+
+// Parchamos el error, reiniciando el valor del producto ID al original
+
+//Producto.ID=100;
+
+
+console.table(Producto)
+console.table(Comprador)
+console.table(Pedido)
+
+
+let Venta2=
+{
+producto:{...Producto},
+comprador:{...Comprador},
+pedido:{...Pedido}
+}
+
+console.log("Fusionamos los 3 objetos en uno nuevo, sin perdida de informacion")
+console.table(Venta2);
+console.log(Venta2)
+
+
+
+
+// Vamos a verificar el estatus  de mutabilidad de los objetos
+console.log("Vamos a verificar el estatus de mutabilidad del objeto Pedido")
+console.log(`Esta el objeto de pedido congelado ? : ${Object.isFrozen(Pedido)}`);
+console.log(`Esta el objeto de pedido Sellado ? : ${Object.isSealed(Pedido)}`);
+
+
+console.log("Vamos a verificar el estatus de mutabilidad del objeto Comprador")
+console.log(`Esta el objeto de Comprador congelado ? : ${Object.isFrozen(Comprador)}`);
+console.log(`Esta el objeto de Comprador Sellado ? : ${Object.isSealed(Comprador)}`);
+
+
+
+console.log("Vamos a verificar el estatus de mutabilidad del objeto Comprador")
+console.log(`Esta el objeto de producto congelado ? : ${Object.isFrozen(Producto)}`);
+console.log(`Esta el objeto de producto Sellado ? : ${Object.isSealed(Producto)}`);
+
+//Modificamos la estructura de producto, agregando una nueva propiedad
+Producto['isLegacy']= true;
+console.log(Venta2);
+console.log(Venta2)
+
+
+
+
+
+
+
+
+
+
+//RETO- en sellar parcialmente un objeto
+
+
+// let spotyfyUser = {
+
+// Name: "",
+// nickname: "",
+// password: "",
+// rol:"",
+// since:"",
+// playList:["Las domingueras","Carnita Asada","Pa' trapear"] //normal, modificado o eliminado
+
+// }
+ //en establecer, sellar y congelar un objeto
 
 
 /*
