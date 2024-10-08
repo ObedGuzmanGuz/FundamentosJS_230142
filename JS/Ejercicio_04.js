@@ -126,6 +126,38 @@ console.table(arregloMixto)
 console.log("Agregamos la palabra: \"Hola\", como nuevo elemento")
 arregloMixto.push("Hola");
 console.log("Y también agregamos el numero -5468817875487448415.423412, siendo este un BigInt")
-arregloMixto.push(BigInt(-3218817875487448415.23597518864))
+arregloMixto.push(BigInt(-5468817875487448415.423412))
 console.log("Después de esta dos operaciones el arreglo queda con los siguientes elementos: ")
 console.table(arregloMixto)
+
+
+
+console.log("%c6.- Agregar un nuevo elemento a un arreglo (UNSHIFT) en la posición inicial",style_console)
+console.table(estudiantes)
+console.log("Ahora agregamos a Ignacio Allende, al comienzo del arreglo.")
+arregloMixto.unshift("Ignacio Allende")
+console.log("La lista atual es:")
+console.table(estudiantes)
+
+
+console.log("%c7.- Eliminar el elemento de un arreglo en la última posición (POP)",style_console)
+console.log("El arreglo tiene los siguientes elementos: ")
+console.table(estudiantes)
+console.log("Para este caso eliminaremos a Obed Gúzman, en la última posición. ")
+console.log("Después de eliminar el elemento el arreglo quedo de la siguiente manera:")
+arregloMixto.pop();
+console.table(estudiantes)
+
+
+console.log("%c8.- Eliminar el elemento de un arreglo en la primera posición (SHIFT)",style_console)
+console.log("El arreglo tiene los siguientes elementos:")
+console.table(estudiantes)
+console.log("Para este caso eliminaremos a Raúl Pasos, en la primera posición.")
+estudiantes.shift();
+console.log("Después de eliminar el elemento del arreglo quedo de la siguiente manera: ")
+console.table(estudiantes);
+
+
+console.log("%c9.- Modificar un arreglo en un arreglo nuevo con posiciones definidas (SPLICE)", style_console)
+console.log("El arreglo original tiene los elementos:")
+console.table(estudiantes);
