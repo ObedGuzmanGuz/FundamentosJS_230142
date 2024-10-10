@@ -398,15 +398,15 @@ let seriesTrendig =[
 
 {nombre: "Kingdom", temporadas: 2, totalReprods: "6.0 M"},
 
-{nombre: "The walking dead", temporadas: 16},
+{nombre: "The walking dead", temporadas: 16,totalReprods: "11.0 M"},
 
 
-{nombre: "El mostruo de la vieja seul", temporadas: 2},
+{nombre: "El mostruo de la vieja seul", temporadas: 2,totalReprods: "5.0 M"},
 
-{nombre: "Breakind bad", temporadas: 5},
+{nombre: "Breakind bad", temporadas: 5,totalReprods: "13.0 M"},
 
 
-{nombre: "Stranger This", temporadas: 4}
+{nombre: "Stranger This", temporadas: 4,totalReprods: "21.0 M"}
 
 ];
 
@@ -428,7 +428,7 @@ console.log("Mensaje de error "+error.message);
 
 
 
-console.log("%c.-10 Ciclos para recorrer las propiedades de elementos finitos- (FOR...IN)", style_console);
+console.log("%c10.- Ciclos para recorrer las propiedades de elementos finitos- (FOR...IN)", style_console);
 
 
 //Usando For...in para recorrer cada serie
@@ -448,7 +448,7 @@ console.log('------------------------------')
 
 
 
-console.log("%c11- Ciclos ininterrumpidos para cada uno de los elementos del arreglo 8FOR EACH) ", style_console);
+console.log("%c11.- Ciclos ininterrumpidos para cada uno de los elementos del arreglo 8FOR EACH) ", style_console);
 
 //Lista de series de TV trendig con temporadas, viewer y reprodocciones
 
@@ -495,6 +495,12 @@ let seriesConTresTemporadas = seriesTreading2
 
 //Mostrar los resultados
 
-
 console.log("Series con 3 temporadas que estan en la lista deseada: ")
 console.log(seriesConTresTemporadas);
+
+
+
+
+
+
+
