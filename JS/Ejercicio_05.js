@@ -154,7 +154,7 @@ console.log("Intetamos dividir : 0/10, el resultado es:")
 try{   //intenta
 
 let result= 0/10;  //dividir 0 entre un entero
-
+console.log(result);
 }
 catch (error)
 {
@@ -182,7 +182,7 @@ console.log(" Intetamos dividir : a/10, el resultado es:");
 try{
 
 
-let result= "a/10";
+let result= "a"/10;
 console.log(result)
 
 }
@@ -428,26 +428,73 @@ console.log("Mensaje de error "+error.message);
 
 
 
+console.log("%c.-10 Ciclos para recorrer las propiedades de elementos finitos- (FOR...IN)", style_console);
+
+
+//Usando For...in para recorrer cada serie
+
+for(let i in seriesTrendig){
+console.log(`Serie ${parseInt(i)+1}: `);
+for(let propiedad in seriesTrendig[i]){
+console.log(`${propiedad}: ${seriesTrendig[i][propiedad]}`)
+
+}
+console.log('------------------------------')
+
+
+
+}
 
 
 
 
+console.log("%c11- Ciclos ininterrumpidos para cada uno de los elementos del arreglo 8FOR EACH) ", style_console);
+
+//Lista de series de TV trendig con temporadas, viewer y reprodocciones
+
+let seriesTreading2 =[
+{nombre: "The walking dead", temporadas: 3, viewers: 3000, reproducciones:1.200}, //en el for ech no break ni continue
+{nombre: "The boys", temporadas: 4 ,viewers: 6000, reproducciones:4.200},
 
 
+{nombre: "Loki", temporadas: 3 ,viewers: 12000, reproducciones:45000},
 
 
+{nombre: "Los pollos hermanos", temporadas: 3 ,viewers: 2000, reproducciones:15000},
+{nombre: "Jeffry Damer", temporadas: 1 ,viewers: 2000, reproducciones:4000}
 
 
+]
+
+//Usando forEch  para recorrer cada serie y calcular la calidicacion
+
+seriesTreading2.forEach((serie, index) =>{
+let calidicacion = (serie.reproducciones / serie.viewers).toFixed(2);// calculando la calificacion y la rendodea a 2 decimales
+
+console.log(`serie ${index+1}`);
+
+console.log(`Nombre: ${serie.nombre}`);
+console.log(`Temporadas ${serie.temporadas}`);
+
+console.log(`Viewers: ${serie.viewers}`);
+console.log(`Reproducciones: ${serie.reproducciones}`);
+console.log(`Calificacion: ${calidicacion}`);
+console.log("-----------------------------");
+})
+// Usando Filter para filtrar y map para transformar la informacion.
+// Listas de series que queremos verificar
 
 
+let seriesDeseadas= ["Hombres de negro", "Loki", "Las tortugas Ninja", "Los pollos hermanos","Jeffry Damer"];
+
+// Usando map e includes para filtrar y obtener los nombres de series con 3 temporadas
+let seriesConTresTemporadas = seriesTreading2
+.filter(serie =>serie.temporadas <=3 ) //Filtramos las series que tienen 3 temporadas
+.map(serie => serie.nombre)  //Obtenemos solo los nombres de esas series
+.filter( nombre => seriesDeseadas.includes(nombre)); //Filtramos las que estan en las lista de series deseadas
+
+//Mostrar los resultados
 
 
-
-
-
-
-
-console.log("%c11- Ciclos ininterrumpidos para cada uno ")
-
-
-
+console.log("Series con 3 temporadas que estan en la lista deseada: ")
+console.log(seriesConTresTemporadas);
