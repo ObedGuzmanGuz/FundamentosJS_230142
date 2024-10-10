@@ -142,7 +142,289 @@ case (antioNacimiento>1980 && antioNacimiento<=1994):
 }
 
 
-console.log(`Dado que nacio en el año 1997 soy de la generacion: ${asignaGeneracion(1982)}`);
+console.log(`Dado que nacio en el año 2005 soy de la generacion: ${asignaGeneracion(1982)}`);
+
+
+
+console.log("%c4. -Manejo de excepciones /(TRY/CAHC", style_console);
+
+console.log("Intetamos dividir : 0/10, el resultado es:")
+
+
+try{   //intenta
+
+let result= 0/10;  //dividir 0 entre un entero
+
+}
+catch (error)
+{
+
+
+console.log("Ocurrio un error: "+error.message);
+}
+
+console.log(" Intetamos dividir : 10/0, el resultado es:");
+try{
+
+    let result= 10/0;
+    console.log(result)
+
+    
+}catch(error)
+{
+    console.log("Ocurrio un error: "+ error.message);
+}
+
+
+
+
+console.log(" Intetamos dividir : a/10, el resultado es:");
+try{
+
+
+let result= "a/10";
+console.log(result)
+
+}
+catch(error)
+
+{
+
+console.log("Ocurrio un error :"+ error.message)
+
+}
+
+
+
+console.log(" Intetamos dividir : a/10, el resultado es:");
+try{
+
+
+let result= a/10;
+console.log(result)
+
+}
+catch(error)
+
+{
+
+console.log("Ocurrio un error :"+ error.message)
+
+}
+console.log("Intentamos dividir : el valor de la variables x/ entre el valor de la variable y, el resultado es:")
+
+
+
+
+try{
+
+let x=8, y=2, result=x/y;
+console.log(result)
+
+}
+catch(error)
+{
+console.log("Ocurrio un error: "+error.message);
+
+
+
+}
+
+
+console.log("%c5.- Control de ciclos (Break / Continue) ", style_console);
+
+// En alguna ocasiones sera importante detener un ciclo de manera abrupta para controlar casos especiales en un ciclo...
+
+console.log("Vamos a contar del 1 al 10...")
+
+for(let num=1; num<11; num++){
+
+console.log(num);
+
+}
+
+console.log("Ahora necesitamos que si llegas al 7 pares de contar.... Suponiendo que solo por hoy es de mala suerte")
+
+
+for(num = 1; num<=10; num++){
+if(num==7)
+break;
+else
+console.log(num)
+
+
+}
+
+
+console.log("Ahora necesitamos que si llegas al 7 te saltes ese numero y continues")
+
+
+for(num=1; num<=10;num++){
+
+if(num==7)
+{
+continue;
+
+}
+console.log(num);
+}
+
+console.log("%c6.- Ciclo Iterativo - (FOR) ", style_console);
+
+//controlan el flujo de control de las instrucciones que se les da a la computqadora
+//Recorre de manera iterativa (i), de incremental o decremental
+
+
+
+console.log("Los dias de la seman son en orde ascedentes son: ")
+
+let dias= ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
+
+for( let i=0; i<dias.length;i++){
+console.log(dias[i]);
+
+}
+
+
+console.log(" Ahora vamos a imprimir los meses en orden descendente")
+const meses= ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+
+for(let i=meses.length-1; i>=0;i--){
+
+console.log(meses[i])
+}
+
+
+console.log("%c7.- Ciclo Condicionales -(While)",style_console);
+//Estos ciclos (BUCKLE) dependen de una condicion para continuar ejecuntadose
+let finDeSemana= false;
+let mensaje = "";
+let j =0;
+
+while(j< dias.length){
+
+    switch(j){  //Usamos J para que coincida con el indice 
+    case 0:
+    finDeSemana= true;
+     mensaje= "Mormingoooooooooo. ZzZZzZz"
+    break;
+    
+    case 1:
+    finDeSemana= false;
+     mensaje= "San Lunes a chyambiaarrr"
+    break;
+    
+    case 2:
+    finDeSemana= false;
+     mensaje= "Segundo dia Martes de weba"
+    break;
+    
+    
+    case 3:
+    finDeSemana= false;
+     mensaje= "Miercoles de hacer tarea";
+    break;
+    
+    
+    case 4:
+    finDeSemana= false;
+     mensaje= "Jueves de racismo";
+    break;
+    
+    case 5:
+    finDeSemana= false;
+     mensaje= "Viernes de dejar los pendientes para el domingo";
+    break;
+    
+    
+    case 6:
+    finDeSemana= false;
+     mensaje= "Sabdo de weboniar todo el día";
+    break;
+    
+    
+    }
+
+    if(!finDeSemana)
+    {
+console.log(`Dias: ${dias[j]}`);
+console.log(`Mensaje del dia: ${mensaje}`);
+
+    }
+    j++;
+    }
+
+    console.log("%c8.- Ciclo condicionales que se ejecuta al menos una vez - (Do While)",style_console);
+
+// Simulamos una lista de episodios de una temporada 
+
+let episodios= [
+
+
+"Episodio 1:  The Fuller Dogfight",
+
+"Episodio 2:  The Flatwoods Monster ",
+
+
+"Episodio 3:  The Lubbock Lights "
+
+];
+let indice=0;
+let continuarViendo= true ;
+// Esta variable simula la decision del usuario de continuar viendo
+do{
+
+console.log(`Reproduciendo ${episodios[indice]}`)
+//Simulamos la reproduccion del episidio
+indice++;
+
+//Simulamos una pregunta al usuario si desea seguir viendo
+
+if(indice < episodios.length){
+continuarViendo = confirm("¿Deseas continuar con el siguiente episodio?");
+}else{
+    continuarViendo = false; // Cuando se acaba la lista de epuisodios
+}
+} while (continuarViendo && indice < episodios.length);
+
+console.log("Fin de la reproduccion.");
+
+// Ciclo para reccorrer objetos iterables como mapás, arreglos, cadenas y conjunto de datos.
+
+console.log("%c9. - Ciclos para correr elementos finitos (FOR....OF",style_console);
+let seriesTrendig =[
+
+{nombre: "The proyect blue books", temporadas: 2, totalReprods: "15.0 M"},
+
+{nombre: "Kingdom", temporadas: 2, totalReprods: "6.0 M"},
+
+{nombre: "The walking dead", temporadas: 16},
+
+
+{nombre: "El mostruo de la vieja seul", temporadas: 2},
+
+{nombre: "Breakind bad", temporadas: 5},
+
+
+{nombre: "Stranger This", temporadas: 4}
+
+];
+
+//Usando for.... of para recorrer la lista
+for(let serie of seriesTrendig){  //de lado izquiero va el singular y derecho plural
+console.log(`Series: ${serie.nombre}, Temporadas: ${serie.temporadas}`);
+
+}
+
+try{
+console.log( `La ultima serie leida fué : ${serie.nombre}`) // No va a funcionar por la variable serie ya no existe ya que si alcance solo estuvo durante el ciclo
+}
+catch(error)
+{
+
+console.log("Mensaje de error "+error.message);
+
+}
 
 
 
@@ -165,7 +447,7 @@ console.log(`Dado que nacio en el año 1997 soy de la generacion: ${asignaGenera
 
 
 
-
+console.log("%c11- Ciclos ininterrumpidos para cada uno ")
 
 
 
